@@ -1,6 +1,6 @@
 import GameSavingLoader from '../class/GameSavingLoader.js';
 
-test('Успешно', () => {
+test('Успешно', (done) => {
   const expected = JSON.stringify({
     id: 9,
     created: 1546300800,
@@ -13,5 +13,6 @@ test('Успешно', () => {
   });
   GameSavingLoader.load().then((saving) => {
     expect(saving).toEqual(expected);
+    done();
   });
 });
